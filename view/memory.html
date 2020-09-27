@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory by MC</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet/less" type="text/css" href="css/style.less" />
+
+    <!-- JS -->
+    <script src="js/gameLogic.js"></script>
+    <script src="js/script.js" defer></script>
+
+    <!-- Librairie JS -->
+    <!-- permet de compiler a la volée le less en css. Ne pas utiliser en production, parce que c'est super lent.-->
+    <script src="js/library/less.min.js" ></script>
+    <!-- Wrapper pour faire des requetes XMLHttpRequests -->
+    <script src="js/library/axios.min.js"></script>
+</head>
+<body>
+    <main>
+        <!-- les data- permettent de definir des sortes de variables dans notre HTML pour plus de simplicité lors du travail avec JS. On n'utilise pas les ID pour faciliter la selection d'un element -->
+        <div data-view="menu" class="hide flex_container flex_direction_column both_center full_height">
+            <h1>Memory</h1>
+            <h2>High-Scores</h2>
+            <div data-view="scores"></div>
+            <button class="menu_button" data-action="launchGame">Lancer le jeu</button>
+        </div>
+        <div data-view="jeu" class="hide flex_container flex_direction_column both_center">
+            <!-- Contient le jeu -->
+            <div data-view="gameBoard" class="flex_container flex_direction_row flex_collapse game_container both_center"></div>
+            <!-- Contient les éléments du menu du jeu-->
+            <div>
+                <progress max="" value="" data-el="timer" class="full_width"></progress>
+            </div>
+        </div>
+        <div data-view="score" class="hide flex_container both_center full_height">
+            <!-- On ne met pas d'action car on va recuperer le formulaire via Javascript avant son envoi-->
+            <form data-action="sendScore" action="#" method="post" name="score" class="flex_container flex_direction_column both_center">
+                <input type="text" name="pseudo" placeholder="Pseudo">
+                <input data-value="score" type="test" name="score" readonly value="">
+                <button class="menu_button" type="submit">Send your score</button>
+            </form>
+        </div>
+    </main>
+</body>
+</html>

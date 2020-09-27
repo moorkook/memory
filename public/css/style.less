@@ -1,0 +1,89 @@
+// Définition de nos variables
+@colorBase: white;
+@colorTouch: #a3d4aa;
+
+// Classes génériques
+.hide {
+    display: none!important;
+}
+.show {
+    display: inherit;
+}
+.flex_container {
+    display: flex;
+}
+.flex_direction_column {
+    flex-direction: column;
+}
+.flex_direction_row {
+    flex-direction: row;
+}
+.flex_collapse{
+    flex-wrap: wrap;
+}
+.both_center {
+    justify-content: center;
+    align-items: 
+    center;
+}
+.full_width {
+    width: 99vw;
+}
+.full_height {
+    height: 97vh;
+}
+progress {
+    background-color: coral;
+}
+// Classes specifiques
+.game_container div{
+    width: 10vw;
+    height: 22vh;
+    background-color: @colorBase;
+    border: 1px solid lightgrey;
+    &:hover {
+        cursor: pointer;
+        background-color: @colorTouch;
+    }
+    &[data-status="on"] {
+        background-color: @colorTouch;
+    }
+}
+// https://www.bestcssbuttongenerator.com/#/3
+.menu_button  {
+	box-shadow:inset 0px 1px 3px 0px #91b8b3;
+	background:linear-gradient(to bottom, #768d87 5%, #6c7c7c 100%);
+	background-color:#768d87;
+	border-radius:5px;
+	border:1px solid #566963;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:11px 23px;
+	text-decoration:none;
+	text-shadow:0px -1px 0px #2b665e;
+}
+.menu_button :hover {
+	background:linear-gradient(to bottom, #6c7c7c 5%, #768d87 100%);
+	background-color:#6c7c7c;
+}
+.menu_button :active {
+	position:relative;
+	top:1px;
+}
+
+
+// Autres
+h2 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+// https://www.transparenttextures.com/
+body {
+    background-color: #a3d4aa;
+    background-image: url("https://www.transparenttextures.com/patterns/brushed-alum-dark.png");
+    /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
