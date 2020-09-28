@@ -1,6 +1,9 @@
 {
     "name": "mc/memory",
     "require": {},
+    "require-dev": {
+        "squizlabs/php_codesniffer": "3.*"
+    },
     "autoload": {
         "psr-4": {
             "Controller\\": "Controller/",
