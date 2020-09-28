@@ -13,6 +13,7 @@
                 // On est dans un appel API
                 switch ($pathDetail[1]) {
                     case 'sendScore':
+                        // On pourrait sans doute l'optimiser
                         $controller = new Controller\GameController();
                         $controller->sendScore();
                     case 'displayScore':
@@ -24,6 +25,7 @@
             // On est dans un appel classique ce qui nous permet de changer les vues
             switch ($pathDetail[0]) {
                 case 'score':
+                    // Idem pour optimisation
                     $controller = new Controller\MemoryController();
                     $controller->scoreView();
                     break;

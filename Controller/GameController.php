@@ -2,10 +2,20 @@
 
     namespace Controller;
 
+    // Permet de preparer l'utilisation de la classe ScoreModel. On se sert du namespace defini dans composer.json
     use Model\ScoreModel as ScoreModel;
-
+    
+    /**
+     * GameController
+     * Gere la logique liée au jeu de memory
+     */
     class GameController extends Controller
-    {
+    {        
+        /**
+         * displayScore
+         * Renvoit les scores sous format JSON
+         * @return JSON
+         */
         public function displayScore() {
             if($this->checkRequestType('GET')) {
                 header('Content-Type: application/json');
@@ -15,7 +25,12 @@
             }
 
         }
-
+        
+        /**
+         * sendScore
+         * gere l'insertion d'un nouveau score
+         * @return JSON
+         */
         public function sendScore() {
             // On verifie qu'on est bien sur une requete POST
             if($this->checkRequestType('POST')) {
@@ -26,6 +41,7 @@
                     // Instanciation du model qui va permettre d'inserer notre score dans la BDD
                     $newScore = new ScoreModel();
                     $result = $newScore->insertOne($_POST);
+                    // Si l'insertion est ok
                     if($result === true) {
                         echo json_encode([
                             "message" => "score inserted"

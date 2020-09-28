@@ -1,7 +1,11 @@
 <?php
 
     namespace Controller;
-
+    
+    /**
+     * Controller
+     * Classe parente qui gere toutes les actions communes aux controllers
+     */
     class Controller
     {
                 

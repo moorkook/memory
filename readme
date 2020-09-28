@@ -1,6 +1,29 @@
 
+### Architecture :
+
+Controller => Contient la logique de l'application
+dump => Contient les dumps qui permettente de recréer facilement la BDD
+Model => Contient une couche applicative intermediaire entre les controllers et la BDD.
+public => Contient tout ce qui sera lisible par le navigateur (JS, CSS, Images)
+vendor => Contient nos librairies, dans mon cas, je m'en sers uniquement pour l'autoloader PSR4
+view => Contient les vues HTML, qui vont etre renvoyée au navigateur
+
+
+### Pour installer
+Necessite php7, et mysql
+Modifier les informations de connexions a la BDD dans Model/Model.php7
+Jouer l'insertion en BDD avec mysql -uUSER -p < dump/structure.sql
+Normalement, c'est bon, mais seulement si votre apache autorise le .htaccess
+
+<Directory /var/www/html>
+    Options Indexes FollowSymLinks MultiViews
+    AllowOverride All
+    Order allow,deny
+    allow from all
+</Directory>
+
+
+###TODO
 Propreté de code
 Refaire un tour pour commentaires + refacto front + back
 Mettre un deploiement sous docker
-
-Design
