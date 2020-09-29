@@ -24,6 +24,7 @@ Normalement, c'est bon, mais seulement si votre apache autorise le .htaccess
 
 
 ###TODO
-Propreté de code
-Refaire un tour pour commentaires + refacto front + back
+Commentaire Front
+Refacto Back
+Refacto Front
 Mettre un deploiement sous docker
