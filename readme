@@ -10,10 +10,13 @@ view => Contient les vues HTML, qui vont etre renvoyée au navigateur
 
 
 ### Pour installer
+
 Necessite php7, et mysql
 Modifier les informations de connexions a la BDD dans Model/Model.php7
 Jouer l'insertion en BDD avec mysql -uUSER -p < dump/structure.sql
-Normalement, c'est bon, mais seulement si votre apache autorise le .htaccess
+Normalement, c'est bon, mais seulement si votre apache autorise la lecture du .htaccess
+
+Pour changer les regles du jeu, c'est dans public/js/gameLogic.js
 
 <Directory /var/www/html>
     Options Indexes FollowSymLinks MultiViews
@@ -21,10 +24,3 @@ Normalement, c'est bon, mais seulement si votre apache autorise le .htaccess
     Order allow,deny
     allow from all
 </Directory>
-
-
-###TODO
-Commentaire Front
-Refacto Back
-Refacto Front
-Mettre un deploiement sous docker
