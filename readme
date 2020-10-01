@@ -12,7 +12,7 @@ view => Contient les vues HTML, qui vont etre renvoyée au navigateur
 ### Pour installer
 
 Necessite php7, et mysql
-Modifier les informations de connexions a la BDD dans Model/Model.php7
+Modifier les informations de connexions a la BDD dans Model/Model.php
 Jouer l'insertion en BDD avec mysql -uUSER -p < dump/structure.sql
 Normalement, c'est bon, mais seulement si votre apache autorise la lecture du .htaccess
 
